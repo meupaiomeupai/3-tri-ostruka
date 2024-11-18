@@ -1,16 +1,16 @@
 import { getCSS, tickConfig, criarGrafico } from "./common.js"
 
-async function quantidadeUsuariosPorRede() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
+async function quantidadeEquipamentosPorRegiao() {
+    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-equipamentos.json'
     const res = await fetch(url)
     const dados = await res.json()
-    const nomeDasRedes = Object.keys(dados)
-    const quantidadeDeUsuarios = Object.values(dados)
+    const nomeDasRegioes = Object.keys(dados)
+    const quantidadeDeEquipamentos = Object.values(dados)
 
     const data = [
         {
-            x: nomeDasRedes, 
-            y: quantidadeDeUsuarios, 
+            x: nomeDasRegioes, 
+            y: quantidadeDeEquipamentos, 
             type: 'bar',
             marker: {
                 color: getCSS('--primary-color')
@@ -22,7 +22,7 @@ async function quantidadeUsuariosPorRede() {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'Redes sociais com mais usuários no mundo',
+            text: 'Quantidade de equipamentos agrícolas por região',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -33,7 +33,7 @@ async function quantidadeUsuariosPorRede() {
         xaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'nome das redes sociais',
+                text: 'Regiões',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -42,7 +42,7 @@ async function quantidadeUsuariosPorRede() {
         yaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'bilhões de usuários ativos',
+                text: 'Quantidade de equipamentos (milhões)',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -54,4 +54,4 @@ async function quantidadeUsuariosPorRede() {
     criarGrafico(data, layout)
 }
 
-quantidadeUsuariosPorRede()
+quantidadeEquipamentosPorRegiao()
