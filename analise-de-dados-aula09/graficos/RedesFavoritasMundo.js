@@ -1,16 +1,16 @@
 import { getCSS, criarGrafico, incluirTexto } from "./common.js"
 
-async function redesFavoritasMundo() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/redes-favoritas.json'
+async function ferramentasFavoritasTratador() {
+    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/ferramentas-favoritas.json' // Alterado o URL para corresponder a uma API fictícia de ferramentas
     const res = await fetch(url)
     const dados = await res.json()
-    const redes = Object.keys(dados)
+    const ferramentas = Object.keys(dados)
     const valores = Object.values(dados)
 
     const data = [
         {
             values: valores,
-            labels: redes,
+            labels: ferramentas,
             type: 'pie',
             textinfo: 'label+percent'
         }
@@ -21,7 +21,7 @@ async function redesFavoritasMundo() {
         paper_bgcolor: getCSS('--bg-color'),
         height: 700,
         title: {
-            text: 'Redes sociais que os usuários mais gostam',
+            text: 'Ferramentas favoritas dos tratadores',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -39,7 +39,7 @@ async function redesFavoritasMundo() {
 
     criarGrafico(data, layout)
 
-    incluirTexto(`Embora o <span>Instagram</span> ocupe a quarta posição em termos de número total de usuários entre as redes sociais, destaca-se como a <span>preferida pelos usuários</span>. Supera até mesmo o <span>Facebook</span>, a plataforma com mais usuários, sendo a terceira opção mais apreciada pelos usuários. <br>Essa preferência evidencia a forte conexão e apreço que as pessoas têm pelo Instagram em comparação com outras redes sociais`)
+    incluirTexto(`Embora o <span>Arado</span> seja uma ferramenta essencial para várias operações agrícolas, o <span>Trator</span> se destaca como a <span>preferida dos tratadores</span>, superando até mesmo o <span>Cultivador</span> e outras ferramentas. Isso ressalta a importância e a versatilidade do trator nas atividades diárias dos tratadores.`)
 }
 
-redesFavoritasMundo()
+ferramentasFavoritasTratador()
