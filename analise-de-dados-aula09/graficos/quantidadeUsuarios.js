@@ -22,7 +22,7 @@ async function quantidadeEquipamentosPorRegiao() {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'Quantidade de equipamentos agrícolas por região',
+            text: 'Distribuição de Tratores e Equipamentos por Região',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -33,7 +33,7 @@ async function quantidadeEquipamentosPorRegiao() {
         xaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'Regiões',
+                text: 'Regiões Agrícolas',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -42,13 +42,12 @@ async function quantidadeEquipamentosPorRegiao() {
         yaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'Quantidade de equipamentos (milhões)',
+                text: 'Equipamentos em uso (milhões)',
                 font: {
                     color: getCSS('--secondary-color')
                 }
             }
         }
-
     }
 
     criarGrafico(data, layout)
