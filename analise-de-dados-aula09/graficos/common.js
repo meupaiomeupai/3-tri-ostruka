@@ -10,7 +10,7 @@ const tickConfig = {
 
 function criarGrafico(data, layout) {
     const grafico = document.createElement('div')
-    grafico.className = 'grafico'
+    grafico.className = 'grafico-tratador' // Classe alterada para refletir o tema de tratador
     document.getElementById('graficos-container').appendChild(grafico)
     const config = {
         responsive: true,
