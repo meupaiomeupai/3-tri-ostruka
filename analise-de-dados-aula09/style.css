@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root {
-    --bg-color: #222831;
-    --primary-color: #DDDDDD;
-    --secondary-color: #F05454;
+    --bg-color: #4E6E58; /* Verde militar para fundo */
+    --primary-color: #F2D7B3; /* Marrom claro, inspirado em terra */
+    --secondary-color: #C89557; /* Amarelo mostarda, inspirado em detalhes de máquinas agrícolas */
     --font: "Nunito Sans", sans-serif;
 }
 
@@ -59,6 +59,7 @@ nav a:hover {
     text-align: center;
     padding: 2rem;
     border: var(--secondary-color) solid 2px;
+    background-color: rgba(78, 110, 88, 0.1); /* Fundo semi-transparente */
 }
 
 span {
